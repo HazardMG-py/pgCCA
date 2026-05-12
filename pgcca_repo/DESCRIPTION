@@ -1,0 +1,36 @@
+Package: pgCCA
+Title: Precision-Guided Graph Canonical Correlation Analysis
+Version: 0.1.0
+Authors@R: 
+    person(given   = "[First]",
+           family  = "[Last]",
+           role    = c("aut", "cre"),
+           email   = "[email@institution.edu]")
+Description: Implements Precision-Guided gCCA (pgCCA), a three-stage
+    method for recovering cross-modal biclique associations between two
+    high-dimensional datasets. pgCCA prepends a whitening step using the
+    estimated precision matrix before the greedy biclique detection of
+    Park et al. (2025). Whitening removes within-set block correlation
+    that otherwise produces false-positive associations in the raw
+    cross-correlation matrix, amplifying the true signal from 0.30 to
+    0.64 and suppressing block-mate false positives from 0.18 to 0.05.
+    Includes Ledoit-Wolf and graphical Lasso precision estimators,
+    simulation utilities, and a diagnostic epsilon sweep for real data.
+License: MIT + file LICENSE
+URL: https://github.com/[USERNAME]/pgCCA
+BugReports: https://github.com/[USERNAME]/pgCCA/issues
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Depends: 
+    R (>= 4.0.0)
+Suggests:
+    glasso (>= 1.11),
+    PMA (>= 1.2.1),
+    MASS (>= 7.3),
+    ggplot2 (>= 3.4),
+    patchwork (>= 1.1),
+    testthat (>= 3.0)
+Imports:
+    stats,
+    methods
